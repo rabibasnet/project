@@ -1,0 +1,103 @@
+
+    <div ng-controller="sessionCtrl" class="bat">
+
+<form class="form-group" updateId=0>
+ <div class="row">
+		<div class="col-md-2">
+		start Date
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.startDate">
+		</div>
+		</div>
+    
+	<div class="row">
+		<div class="col-md-2">
+		End Date
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.endDate">
+		</div>
+		</div>	
+		
+		<div class="row">
+		<div class="col-md-2">
+		Start Time
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.startTime">
+		</div>
+		</div>
+
+    
+    <div class="row">
+		<div class="col-md-2">
+        Select the Class ID
+        </div>
+        
+		<div class="col-md-2">
+            <select class="form-Container" ng-model="formModels.classId">
+            <option value=1 selected> 1</option>
+            <option value =2 > 2</option>
+            <option value =3> 3</option>
+            <option value =4> 4</option>
+            </select>
+          </div>
+		</div>
+    
+    <div class="row">
+		<div class="col-md-2">
+        Select the Teacher ID
+        </div>
+		<div class="col-md-2">
+            <select class="form-Container" ng-model="formModels.teacherId">
+                <option value=1 selected> 1</option>
+                <option value =2 > 2</option>
+                <option value =3>3</option>
+                <option value =4> 4</option>
+            </select>
+          </div>
+		</div>
+    <div class="row">
+		<div class="col-md-2">
+		Session Title
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.sessionTitle">
+		</div>
+		</div>
+    
+    <button class="btn btn-success" ng-click=add()>ADD</button>    
+	</form>
+    <table class="table table-striped">
+  
+		<tr>
+        <th>sessionId</th>
+		<th>start Date</th>
+		<th>end Date</th>
+		<th>start Time</th>
+        <th>classId</th>
+        <th>teacherId</th>
+        <th>sessionTitle</th>
+		
+        </tr>
+	<tr ng-repeat="x in sessionList|filter:searchMd|orderBy:'title':false">
+        <td>{{x.sessionId}}</td>
+		<td>{{x.startDate}}</td>
+		<td>{{x.endDate}}</td>
+		<td>{{x.startTime}}</td>
+        <td>{{x.classId}}</td>
+        <td>{{x.teacherId}}</td>
+        <td>{{x.sessionTitle}}</td>
+		 <td>
+       <button class="btn btn-primary" ng-click=update(x.sessionId)>UPDATE</button> 
+        <button class="btn btn-danger"  ng-click=delete(x.sessionId)>DELETE</button>
+        </td>
+		</tr>
+        </table>
+    
+    </div>
+
+
+
+ 

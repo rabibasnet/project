@@ -1,0 +1,84 @@
+
+    <div ng-controller="studentCtrl" class="bat">
+
+<form class="form-group">
+
+	<div class="row" updateId=0>
+		<div class="col-md-2">
+		FirstName
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.firstName">
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-2">
+		LastName
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.lastName">
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-2">
+		Address
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.address">
+		</div>
+		</div>	
+		<div class="row">
+		<div class="col-md-2">
+		PhoneNumber
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.phoneNumber">
+		</div>
+		</div>
+	<div class="row">
+		<div class="col-md-2">
+		email
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.email">
+		</div>
+		</div>
+    <div class="row">
+		<div class="col-md-2">
+		ssn
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.ssn">
+		</div>
+		</div>
+    <br>
+		<button class="btn btn-success" ng-click=add()>ADD</button>    
+	</form>
+    <table class="table table-striped">
+  
+		<tr>
+        <th>StudentId</th>
+		<th>firstName</th>
+		<th>lastName</th>
+		<th>Address</th>
+		<th>phone</th>
+        <th>email</th>
+        <th>ssn</th>
+        </tr>
+	<tr ng-repeat="x in studentList|filter:searchMd|orderBy:'firstName':false">
+        <td>{{x.studentId}}</td>
+		<td>{{x.firstName}}</td>
+		<td>{{x.lastName}}</td>
+		<td>{{x.address}}</td>
+		<td>{{x.phoneNumber}}</td>
+		<td>{{x.email}}</td>
+        <td>{{x.ssn}}</td>
+        <td>
+       <button class="btn btn-primary" ng-click=update(x.studentId)>UPDATE</button> 
+        <button class="btn btn-danger"  ng-click=delete(x.studentId)>DELETE</button>
+        </td>
+		</tr>
+        </table>
+    
+    </div>
+

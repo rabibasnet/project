@@ -1,0 +1,59 @@
+
+    <div ng-controller="classCtrl" class="bat">
+
+<form class="form-group" updateId=0>
+
+	<div class="row">
+		<div class="col-md-2">
+		title
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.title">
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-2">
+		classList
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.classList">
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-2">
+		description
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.description">
+		</div>
+		</div>	
+		
+    <br>
+		<button class="btn btn-success" ng-click=add()>ADD</button>    
+	</form>
+    <table class="table table-striped">
+  
+		<tr>
+        <th>ClassId</th>
+		<th>title</th>
+		<th>classList</th>
+		<th>description</th>
+		
+        </tr>
+	<tr ng-repeat="x in classList|filter:searchMd|orderBy:'title':false">
+        <td>{{x.classId}}</td>
+		<td>{{x.title}}</td>
+		<td>{{x.classList}}</td>
+		<td>{{x.description}}</td>
+		
+        <td>
+        <button class="btn btn-primary" ng-click=update(x.classId)>UPDATE</button> 
+        <button class="btn btn-danger"  ng-click=delete(x.classId)>DELETE</button>
+        </td>
+		</tr>
+        </table>
+    
+    </div>
+
+
+

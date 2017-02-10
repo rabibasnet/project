@@ -1,0 +1,49 @@
+
+    <div ng-controller="batchCtrl" class="bat">
+
+<form class="form-group" updateId=0>
+ <div class="row">
+		<div class="col-md-2">
+		Session Id
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.sessionId">
+		</div>
+		</div>
+    
+	<div class="row">
+		<div class="col-md-2">
+		student Id
+		</div>
+		<div class="col-md-2">
+		<input type="text" class="form-Container" ng-model="formModels.studentId">
+		</div>
+		</div>	
+		
+		
+    <button class="btn btn-success" ng-click=add()>ADD</button>    
+	</form>
+    <table class="table table-striped">
+  
+		<tr>
+        <th>batchId</th>
+		<th>Session Id</th>
+		<th>Student Id</th>
+		
+        </tr>
+	<tr ng-repeat="x in batchList|filter:searchMd|orderBy:'title':false">
+        <td>{{x.batchId}}</td>
+		<td>{{x.sessionId}}</td>
+		<td>{{x.studentId}}</td>
+		 <td>
+        <button class="btn btn-primary" ng-click=update(x.batchId)>UPDATE</button> 
+        <button class="btn btn-danger"  ng-click=delete(x.batchId)>DELETE</button>
+        </td>
+		</tr>
+        </table>
+    
+    </div>
+
+
+
+ 

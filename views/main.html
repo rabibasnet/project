@@ -1,0 +1,49 @@
+<!doctype Html>
+<html ng-app="rabi">
+<head>
+    <title>angular ui routing</title>
+    <base href="/">
+    <link rel="stylesheet" href="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/styles/abc.css">
+    </head>
+    <body>
+        <h1>SCHOOL DATABASE</h1>
+        <ul class="nav nav-tabs">
+        <li><a data-toggle="tab" ui-sref='student'>Student</a></li>
+        <li><a ui-sref='teacher'>Teacher</a></li>
+        <li><a ui-sref='class'>Class</a></li>
+        <li><a ui-sref='session'>Session</a></li>
+        <li><a ui-sref='batch'>Batch</a></li>
+        </ul>
+        
+<!--<ul class="nav nav-tabs">
+<ul class="nav nav-tabs">
+        <li><a data-toggle="tab" ui-sref='student'>Student</a></li>
+-->
+        <div ui-view></div>
+<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script type="text/javascript" src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="../scripts/app.js"></script>
+<script type="text/javascript" src="../scripts/controller/appCtrl.js"></script>
+
+<script type="text/javascript" src="../scripts/controller/classCtrl.js"></script>
+<script type="text/javascript" src= "../scripts/directives/classHttp.js"></script>
+        
+<script type="text/javascript" src="../scripts/controller/studentCtrl.js"></script>
+<script type="text/javascript" src= "../scripts/directives/studentHttp.js"></script>
+
+<script type="text/javascript" src="../scripts/controller/teacherCtrl.js"></script>
+<script type="text/javascript" src= "../scripts/directives/teacherHttp.js"></script>
+        
+<script type="text/javascript" src="../scripts/controller/sessionCtrl.js"></script>
+<script type="text/javascript" src= "../scripts/directives/sessionHttp.js"></script>
+        
+<script type="text/javascript" src="../scripts/controller/batchCtrl.js"></script>
+<script type="text/javascript" src= "../scripts/directives/batchHttp.js"></script>
+
+
+    </body>
+</html>
